@@ -1,0 +1,310 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+<body>
+    <h1>THÔNG TIN CÁ NHÂN</h1>
+    <label for="fname">Họ và tên: </label>
+    <input type="text" id = "fname" name="fname" >
+    <br>
+    <label for="f_dob">Ngày sinh: </label>
+    <input type="date" name="" id="f_dob">
+    <br>
+    <label for="sex">Giới tính: </label>
+    <input type="radio" name="sex" value="Nam">
+    <label for="">Nam</label> 
+    <input type="radio"  name="sex" value="Nữ">
+    <label for="">Nữ</label> <br>
+    <label for="address">Địa chỉ: </label>
+    <input type="text" name="address" id="address">
+    <br>
+    <label for="email">Email: </label>
+    <input type="text" name="email" id="email">
+    <br>
+    <label for="phone_number">Số Điện Thoại: </label>
+    <input type="number" name="phone_number" id="phone_number" min="0" max="9999999999"> <br>
+    <label for="job">Nghề nghiệp: </label>
+    <select name="job" id="job">
+        <option value="">Học Sinh, Sinh Viên</option>
+        <option value="">Nhân viên văn phòng</option>
+        <option value="">Nội trợ</option>
+        <option value="">Công nhân</option>
+        <option value="CEO">Giám đốc</option>
+        <option value="other">Khác</option> 
+    </select>
+    <br>
+    <label for="thu_nhap">Thu nhập hàng tháng: </label> <br>
+    <input type="radio" name="thu_nhapduoi 1M"> 
+    <label for=""> < 1 triệu </label>
+    <br>
+    <input type="radio" name="thu_nhap"  > 
+    <label for=""> 2-9 triệu </label>
+    <br>
+    <input type="radio" name="thu_nhap"> 
+    <label for="">  10-20 triệu </label>
+    <br>
+    <input type="radio" name="thu_nhap"> 
+    <label for=""> > 20 triệu </label>
+    <br>
+    <span>Sở thích: </span> <br>
+    <input type="checkbox" name="hobby" id=""> <label for="hobby">Xem phim</label> <br>
+    <input type="checkbox" name="hobby" id=""> <label for="hobby">Nghe nhạc</label> <br>
+    <input type="checkbox" name="hobby" id=""> <label for="hobby">Đi dạo</label> <br>
+    <input type="checkbox" name="hobby" id=""> <label for="hobby">Đá bóng</label> <br>
+    <input type="checkbox" name="hobby" id=""> <label for="hobby">Thể thao</label> <br>
+    <input type="checkbox" name="hobby" id=""> <label for="hobby">Ngủ</label> <br>
+    <input type="submit" value="Submit">
+</body>
+    <!DOCTYPE html> 
+     -->
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Khảo sát Nghề nghiệp</title>
+         <style>
+             body {
+                 font-family: Arial, sans-serif;
+                 background-color: #e0f7fa; /* Light blue background */
+                 margin: 0;
+                 padding-top: 80px; /* Padding to avoid header overlap */
+                 padding-bottom: 80px; /* Padding to avoid footer overlap */
+             }
+             .container {
+                 width: 80%;
+                 margin: 0 auto;
+                 padding: 20px;
+                 background-color: #ffffff;
+                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                 border-radius: 10px;
+             }
+             header, footer {
+                 width: 100%;
+                 position: fixed;
+                 left: 0;
+                 background-color: #0288d1; /* Primary blue color */
+                 color: white;
+                 text-align: center;
+                 padding: 15px 0;
+                 z-index: 1000;
+             }
+             header {
+                 top: 0;
+             }
+             footer {
+                 bottom: 0;
+             }
+             h1, h3 {
+                 text-align: center;
+                 color: #0288d1; /* Primary blue color */
+             }
+             label {
+                 display: block;
+                 margin-top: 10px;
+                 margin-bottom: 5px;
+                 color: #0288d1; /* Primary blue color */
+             }
+             input[type="text"], input[type="email"], textarea, select {
+                 width: 100%;
+                 padding: 10px;
+                 margin-bottom: 15px;
+                 border: 1px solid #ccc;
+                 border-radius: 4px;
+                 box-sizing: border-box;
+             }
+             input[type="radio"], input[type="checkbox"] {
+                 margin-right: 10px;
+             }
+             .radio-group, .checkbox-group {
+                 margin-bottom: 15px;
+             }
+             .form-group {
+                 margin-bottom: 20px;
+             }
+             .submit-button {
+                 display: block;
+                 width: 100%;
+                 padding: 10px;
+                 background-color: #0288d1; /* Primary blue color */
+                 color: white;
+                 border: none;
+                 border-radius: 4px;
+                 cursor: pointer;
+                 text-align: center;
+             }
+             .submit-button:hover {
+                 background-color: #0277bd; /* Darker blue color on hover */
+             }
+             @media (min-width: 600px) {
+                 .form-group-half {
+                     width: 48%;
+                     float: left;
+                     margin-right: 2%;
+                 }
+                 .form-group-half:last-child {
+                     margin-right: 0;
+                 }
+             }
+         </style>
+     </head>
+     <body>
+         <header>
+             <h2>Khảo sát Nghề nghiệp</h2>
+         </header>
+         
+         <div class="container">
+             <h1>Khảo sát Nghề nghiệp cho Sinh viên sắp Tốt nghiệp Ngành IT - Kỹ thuật Phần mềm</h1>
+             
+             <form action="/submit" method="post">
+                 <h3>Thông tin cá nhân:</h3>
+                 <div class="form-group">
+                     <label for="name">Họ và tên:</label>
+                     <input type="text" id="name" name="name">
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="gender">Giới tính:</label>
+                     <div class="radio-group">
+                         <input type="radio" id="male" name="gender" value="male">
+                         <label for="male" style="display:inline;">Nam</label>
+                         <input type="radio" id="female" name="gender" value="female">
+                         <label for="female" style="display:inline;">Nữ</label>
+                         <input type="radio" id="other" name="gender" value="other">
+                         <label for="other" style="display:inline;">Khác</label>
+                     </div>
+                 </div>
+                 
+                 <div class="form-group form-group-half">
+                     <label for="age">Tuổi:</label>
+                     <input type="text" id="age" name="age">
+                 </div>
+                 
+                 <div class="form-group form-group-half">
+                     <label for="email">Email:</label>
+                     <input type="email" id="email" name="email">
+                 </div>
+                 
+                 <h3>Thông tin học tập:</h3>
+                 <div class="form-group">
+                     <label for="major">Chuyên ngành cụ thể của bạn trong Kỹ thuật Phần mềm:</label>
+                     <select id="major" name="major">
+                         <option value="development">Phát triển phần mềm</option>
+                         <option value="testing">Kiểm thử phần mềm (QA/QC)</option>
+                         <option value="management">Quản lý dự án phần mềm</option>
+                         <option value="design">Thiết kế phần mềm</option>
+                         <option value="other">Khác</option>
+                     </select>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="gpa">Điểm trung bình tích lũy (GPA) của bạn:</label>
+                     <select id="gpa" name="gpa">
+                         <option value="under2">Dưới 2.0</option>
+                         <option value="2-2.5">2.0 - 2.5</option>
+                         <option value="2.6-3">2.6 - 3.0</option>
+                         <option value="3.1-3.5">3.1 - 3.5</option>
+                         <option value="above3.5">Trên 3.5</option>
+                     </select>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="activities">Bạn có tham gia các khóa học ngoại khóa, thực tập, hoặc dự án nghiên cứu nào không? Nếu có, vui lòng mô tả ngắn gọn:</label>
+                     <textarea id="activities" name="activities" rows="4" cols="50"></textarea>
+                 </div>
+                 
+                 <h3>Kế hoạch nghề nghiệp:</h3>
+                 <div class="form-group">
+                     <label for="plan">Bạn dự định làm gì sau khi tốt nghiệp?</label>
+                     <select id="plan" name="plan">
+                         <option value="higher_education">Tiếp tục học lên cao học (Thạc sĩ/ Tiến sĩ)</option>
+                         <option value="job_search">Tìm kiếm việc làm trong ngành Kỹ thuật Phần mềm</option>
+                         <option value="startup">Khởi nghiệp</option>
+                         <option value="no_plan">Chưa có kế hoạch cụ thể</option>
+                         <option value="other">Khác</option>
+                     </select>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="work_field">Nếu bạn chọn tìm kiếm việc làm, bạn mong muốn làm việc ở lĩnh vực nào trong Kỹ thuật Phần mềm?</label>
+                     <div class="checkbox-group">
+                         <input type="checkbox" id="mobile_dev" name="work_field" value="mobile_dev">
+                         <label for="mobile_dev" style="display:inline;">Phát triển ứng dụng di động</label><br>
+                         <input type="checkbox" id="web_dev" name="work_field" value="web_dev">
+                         <label for="web_dev" style="display:inline;">Phát triển ứng dụng web</label><br>
+                         <input type="checkbox" id="embedded_dev" name="work_field" value="embedded_dev">
+                         <label for="embedded_dev" style="display:inline;">Phát triển phần mềm nhúng</label><br>
+                         <input type="checkbox" id="game_dev" name="work_field" value="game_dev">
+                         <label for="game_dev" style="display:inline;">Phát triển trò chơi (Game Development)</label><br>
+                         <input type="checkbox" id="data_algo" name="work_field" value="data_algo">
+                         <label for="data_algo" style="display:inline;">Phân tích dữ liệu và thuật toán</label><br>
+                         <input type="checkbox" id="qa" name="work_field" value="qa">
+                         <label for="qa" style="display:inline;">Kiểm thử phần mềm (QA/QC)</label><br>
+                         <input type="checkbox" id="project_mgmt" name="work_field" value="project_mgmt">
+                         <label for="project_mgmt" style="display:inline;">Quản lý dự án phần mềm</label><br>
+                         <input type="checkbox" id="other_field" name="work_field" value="other">
+                         <label for="other_field" style="display:inline;">Khác</label>
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="job_applied">Bạn đã từng ứng tuyển vào công ty nào chưa?</label>
+                     <div class="radio-group">
+                         <input type="radio" id="applied_yes" name="job_applied" value="yes">
+                         <label for="applied_yes" style="display:inline;">Có</label>
+                         <input type="radio" id="applied_no" name="job_applied" value="no">
+                         <label for="applied_no" style="display:inline;">Không</label>
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="salary">Mức lương mong muốn của bạn (USD/tháng):</label>
+                     <input type="text" id="salary" name="salary">
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="skills">Bạn cảm thấy kỹ năng nào của mình mạnh nhất?</label>
+                     <textarea id="skills" name="skills" rows="4" cols="50"></textarea>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="improve_skill">Bạn nghĩ mình cần cải thiện kỹ năng nào nhất để đáp ứng yêu cầu công việc?</label>
+                     <textarea id="improve_skill" name="improve_skill" rows="4" cols="50"></textarea>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="additional_training">Bạn có nguyện vọng tham gia các khóa đào tạo bổ sung nào không?</label>
+                     <div class="checkbox-group">
+                         <input type="checkbox" id="additional_training_yes" name="additional_training" value="yes">
+                         <label for="additional_training_yes" style="display:inline;">Có</label>
+                         <input type="checkbox" id="additional_training_no" name="additional_training" value="no">
+                         <label for="additional_training_no" style="display:inline;">Không</label>
+                     </div>
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="other_wishes">Bạn có mong muốn gì khác liên quan đến nghề nghiệp sau khi tốt nghiệp?</label>
+                     <textarea id="other_wishes" name="other_wishes" rows="4" cols="50"></textarea>
+                 </div>
+                 
+                 <h3>Phản hồi và góp ý:</h3>
+                 <div class="form-group">
+                     <label for="feedback">Bạn có ý kiến hoặc góp ý gì khác cho cuộc khảo sát này?</label>
+                     <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+                 </div>
+                 
+                 <div class="form-group">
+                     <input type="submit" value="Gửi" class="submit-button">
+                 </div>
+             </form>
+         </div>
+         
+         <footer>
+             <p>BIT Club - Khoa Công nghệ Thông tin - Trường Đại học ABC</p>
+         </footer>
+     </body>
+     </html>
+     

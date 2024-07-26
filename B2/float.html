@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <h2>Float Exercise</h2>
+    <ul>
+        <li>Style inline Ví dụ <span style="color: red;">Đây là ví dụ</span></li>
+        <li>Style Class Ví dụ <span class="span-class"> Đây là ví dụ</span></li>
+        <li>Style ID Ví dụ <span id="span-ID"> Đây là ví dụ</span></li>
+        <li>Style tag Ví dụ <span >Đây là ví dụ</span></li>
+        <li> Thứ tự ưu tiên: inline > ID > Class > Tag</li>
+        <li>Style nhiều không phải là xịn. Style ít nhưng đạt được mục đích mới là quan trọng</li>
+    </ul>
+    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+    <!-- <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/08/hinh-nen-dien-thoai-anime-2.jpg" alt=""> -->
+    <div class="div1" >
+        <span class="span-div">Đây là thẻ div 1</span>
+    </div>
+    <div class="div2">
+        <span class="span-div">Đây là thẻ div 2</span>
+
+    </div>
+    <div class="div3">
+        <span class="span-div">Đây là thẻ div 3</span>
+
+    </div>
+
+</body>
+</html>
+<style>
+    body{
+        margin: auto;
+    }
+.span-class{
+    color:blue;
+}
+#span-ID{
+    color: blueviolet;
+    
+}
+span{
+    color: brown;
+   
+
+}
+li{
+    font-weight: bold;
+}
+img{
+    float: right;
+    width: 50px;
+    height: 50px;
+    
+}
+div {
+    float: left;
+    padding: 10px;
+    margin: 10px;
+}
+.div1{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    
+}
+.div2{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 106, 0);
+    padding: 10px;
+    
+}
+.div3{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(0, 255, 17);
+    padding: 10px;
+    
+}
+.span-div{
+    color: black;
+    
+}
+</style>

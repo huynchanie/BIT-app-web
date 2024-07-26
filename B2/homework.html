@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta age="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2</title>
+    <link rel="stylesheet" href="/B2/homework.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Khảo sát Nghề nghiệp</h1>
+    </div>
+    <div class="content">
+        <h2>Khảo sát Nghề nghiệp cho Sinh viên sắp Tốt nghiệp Ngành IT</h2>
+        <h3>Thông tin cá nhân:</h3>
+        <div class="form-group">
+            <label for="name" class="label-question">Họ và tên:</label>
+            <input class="input-full" type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="gender" class="label-question" >Giới tính:</label>
+                <input type="radio"  name="gender" >
+                <label for="male">Nam</label>
+                <input type="radio"  name="gender">
+                <label for="female">Nữ</label>
+                <input type="radio"  name="gender" >
+                <label for="other">Khác</label>
+        </div>
+        <div class="form-group">
+            <label for="Email" class="label-question">Email: </label>
+            <input class="input-full" type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="age" class="label-question">Tuổi:</label>
+            <input class="input-half-full" type="number" id="age" name="age" min="0" max="99">
+            <label for="phone" class="label-question">Số điện thoại: </label>
+            <input class="input-half-full" type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10">
+
+        </div>
+        <h3>Thông tin học tập: </h3>
+        <div class="form-group">
+            <label for="major" class="label-question">Chuyên nghành: </label>
+            <select id="major" name="major">
+                <option value="development">Phát triển phần mềm</option>
+                <option value="testing">Kiểm thử phần mềm (QA/QC)</option>
+                <option value="management">Quản lý dự án phần mềm</option>
+                <option value="design">Thiết kế phần mềm</option>
+                <option value="other">Khác</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="gpa" class="label-question">Điểm trung bình tích lũy (GPA):</label>
+            <select id="gpa" name="gpa">
+                <option value="under2">Dưới 2.0</option>
+                <option value="2-2.5">2.0 - 2.5</option>
+                <option value="2.6-3">2.6 - 3.0</option>
+                <option value="3.1-3.5">3.1 - 3.5</option>
+                <option value="above3.5">Trên 3.5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="activities" class="label-question">Bạn có tham gia các khóa học ngoại khóa, thực tập, hoặc dự án nghiên cứu nào không? Nếu có, vui lòng mô tả ngắn gọn:</label>
+           <br> <textarea id="activities" name="activities"></textarea>
+        </div>
+        <h3>Kế hoạch nghề nghiệp trong tương lai:</h3>
+        <div class="form-group">
+            <label for="plan" class="label-question">Bạn dự định làm gì sau khi tốt nghiệp?</label>
+            <select id="plan" name="plan">
+                <option value="higher_education">Tiếp tục học lên cao học (Thạc sĩ/ Tiến sĩ)</option>
+                <option value="job_search">Tìm kiếm việc làm trong ngành IT</option>
+                <option value="startup">Chuyển nghành</option>
+                <option value="no_plan">Chưa có kế hoạch cụ thể</option>
+                <option value="other">Khác</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="work_field" class="label-question" >Nếu bạn chọn tìm kiếm việc làm, bạn mong muốn làm việc ở lĩnh vực nào trong Kỹ thuật Phần mềm?</label>
+            <div class="checkbox-group">
+            <input type="checkbox" >
+            <label for >Phát triển ứng dụng di động</label><br>
+            <input type="checkbox" >
+            <label for >Phát triển ứng dụng web</label><br>
+            <input type="checkbox" >
+            <label for >Phát triển phần mền nhúng </label><br>
+            <input type="checkbox" >
+            <label for >Phát triển trò chơi (Game Development) </label><br>
+            <input type="checkbox" >
+            <label for >Phân tích dữ liệu và thuật toán </label><br>
+            <input type="checkbox" >
+            <label for >Kiểm thử phần mềm (QA/QC) </label><br>
+            <input type="checkbox" >
+            <label for >PM </label><br>
+            <input type="checkbox" >
+            <label for >Khác </label><br>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="job_applied" class="label-question">Bạn đã từng ứng tuyển vào công ty nào chưa?</label> <br>
+                <input type="radio"  name="job_applied" >
+                <label for="job_applied_yes">Đã từng</label>
+                <input type="radio"  name="job_applied">
+                <label for="job_applied_no">Chưa từng</label>
+        </div>
+        <div class="form-group">
+            <label for="salary" class="label-question">Mức lương mong muốn?</label> <br>
+                <input type="radio"  name="salary">
+                <label for="">Khoảng 5 triệu</label> <br>
+                <input type="radio"  name="salary">
+                <label for=""> 5 - 10 triệu</label> <br>
+                <input type="radio"  name="salary">
+                <label for=""> 10 - 15 triệu</label> <br>
+                <input type="radio"  name="salary">
+                <label for=""> 15-20 triệu</label> <br>
+                <input type="radio"  name="salary">
+                <label for=""> Trên 20 triệu</label> <br>
+        </div>
+        <div class="form-group">
+            <label for="strengths" class="label-question">Điểm mạnh của bản thân: </label>
+           <br> <textarea id="strengths" name="strengths"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="weaknesses" class="label-question">Điểm yếu của bản thân: </label>
+           <br> <textarea id="weaknesses" name="weaknesses"></textarea>
+        </div>
+        <h3>Phản hồi và góp ý</h3>
+        <div class="form-group">
+            <label for="feedback" class="label-question">Bạn có ý kiến hoặc góp ý gì khác cho cuộc khảo sát này? </label>
+           <br> <textarea id="feedback" name="feedback"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit"class="input-submit" value="Gửi" >
+        </div>    
+    </div>
+    <div class="footer">
+        <h1>BIT - BTEC Information Technology Club</h1>
+        <h3>Start from simplicity make differences with BIT</h4>
+    </div>
+</body>
+</html>
