@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 id="h1-hello">Hello</h1>
+    </div>
+</body>
+</html>
+<script>
+    let h1 = document.getElementById('h1-hello');
+    h1.style.color = 'red' //
+    console.log(h1)
+    h1.innerHTML ='Xin chào cả nhà!' //Thay đổi nội dung trong thẻ tag
+    //Thêm thẻ h2 vào trong div wrapper
+    let div = document.getElementsByClassName('wrapper');//Chỉ đến thẻ div có class là wrapper
+    let h2 = document.createElement('h2'); // Tạo thẻ h2
+    h2.innerHTML = 'Đây là thẻ h2 mới tạo' //Thêm nội dung cho thẻ h2
+    div[0].appendChild(h2);
+</script>
