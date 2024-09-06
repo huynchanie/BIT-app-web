@@ -64,12 +64,12 @@
       <div class="notification">
         <a href="#"><i class="icon fa-solid fa-bell"></i></a>
       </div>
-
+<!-- AVATA -->
       <div class="avt bg-white">
         <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary bg-white">
           <div class="container-fluid bg-white">
             <ul class="navbar-nav bg-white">
-              <!-- Avatar -->
+            
               <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,25 +92,23 @@
   <div class="content"></div>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Các phần tử cần thao tác
+      
         const addClassButton = document.getElementById('addClassButton');
         const addClassDropdown = document.getElementById('addClassDropdown');
         const avatarDropdown = document.getElementById('navbarDropdownMenuLink');
         const avatarMenu = avatarDropdown.nextElementSibling;
 
-        // Toggle dropdown cho thêm lớp học
         addClassButton.addEventListener('click', function (event) {
             event.preventDefault();
             addClassDropdown.classList.toggle('show');
         });
 
-        // Toggle dropdown cho avatar
         avatarDropdown.addEventListener('click', function (event) {
             event.preventDefault();
             avatarMenu.classList.toggle('show');
         });
 
-        // Đóng các dropdown nếu click bên ngoài
+        
         document.addEventListener('click', function (event) {
             if (!addClassButton.contains(event.target) && !addClassDropdown.contains(event.target)) {
                 addClassDropdown.classList.remove('show');
