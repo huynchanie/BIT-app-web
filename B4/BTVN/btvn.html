@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Management</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .priority-high { color: red; }
+    .priority-middle { color: orange; }
+    .priority-low { color: green; }
+    .avatar { width: 50px; height: 50px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4" style="text-align: center; color: red;">To-Do List Management</h1>
+    
+    <!-- Add Task Form -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Add New Task</h5>
+        <form id="addTaskForm">
+          <div class="form-group">
+            <label for="avatarFile">Avatar</label>
+            <input type="file" class="form-control" id="avatarFile" accept="image/*" required>
+          </div>
+          <div class="form-group">
+            <label for="teamMember">Team Member</label>
+            <input type="text" class="form-control" id="teamMember" required>
+          </div>
+          <div class="form-group">
+            <label for="task">Task</label>
+            <input type="text" class="form-control" id="task" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Day</label>
+            <input type="date" class="form-control" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select class="form-control" id="priority" required>
+              <option value="High">High</option>
+              <option value="Middle">Middle</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Task List -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Task List</h5>
+        <table class="table table-bordered" id="taskTable">
+          <thead>
+            <tr>
+              <th>Avatar</th>
+              <th>Team Member</th>
+              <th>Task</th>
+              <th>Day</th>
+              <th>Priority</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Tasks will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let tasks = [];
+    const addTaskForm = document.getElementById('addTaskForm');
+    const taskTableBody = document.getElementById('taskTable').querySelector('tbody');
+
+    addTaskForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const avatarFile = document.getElementById('avatarFile').files[0];
+      const teamMember = document.getElementById('teamMember').value;
+      const task = document.getElementById('task').value;
+      const date = document.getElementById('date').value;
+      const priority = document.getElementById('priority').value;
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const avatarUrl = e.target.result;
+        const newTask = { avatarUrl, teamMember, task, date, priority };
+        tasks.push(newTask);
+        renderTasks();
+        addTaskForm.reset();
+      };
+      reader.readAsDataURL(avatarFile);
+    });
+
+    function renderTasks() {
+      taskTableBody.innerHTML = '';
+      tasks.forEach((task, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><img src="${task.avatarUrl}" alt="Avatar" class="avatar"></td>
+          <td>${task.teamMember}</td>
+          <td>${task.task}</td>
+          <td>${task.date}</td>
+          <td class="${getPriorityClass(task.priority)}">${task.priority} priority</td>
+          <td>
+            <button class="btn btn-info btn-sm" onclick="editTask(${index})">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteTask(${index})">Delete</button>
+          </td>
+        `;
+        taskTableBody.appendChild(row);
+      });
+    }
+
+    function getPriorityClass(priority) {
+      if (priority === 'High') return 'priority-high';
+      if (priority === 'Middle') return 'priority-middle';
+      if (priority === 'Low') return 'priority-low';
+      return '';
+    }
+
+    function deleteTask(index) {
+      tasks.splice(index, 1);
+      renderTasks();
+    }
+
+    function editTask(index) {
+      const task = tasks[index];
+      document.getElementById('avatarFile').value = '';
+      document.getElementById('teamMember').value = task.teamMember;
+      document.getElementById('task').value = task.task;
+      document.getElementById('date').value = task.date;
+      document.getElementById('priority').value = task.priority;
+      tasks.splice(index, 1);
+      renderTasks();
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
